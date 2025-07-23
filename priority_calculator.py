@@ -9,8 +9,6 @@ def multiply(a, b):
     return a * b
 
 def divide(a, b):
-    if b == 0:
-        raise Exception("Error: Division by zero.")
     return a / b
 
 ops = {"+": add, "-": subtract, "*": multiply, "/": divide}
@@ -70,6 +68,8 @@ def main():
         print(f"Result: {result}")
     except ValueError:
         print(f"Invalid input.")
+    except ZeroDivisionError:
+        print("Error: Division by zero.")
     except Exception as e:
         print(e)
     except EOFError:
